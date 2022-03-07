@@ -1,0 +1,25 @@
+html, body {
+    height: 100vh;
+}
+
+body{
+    display: flex;
+    flex-direction: column;  
+    background-image: url('https://64.media.tumblr.com/2944a60e11cd37937a787a9e61319a95/tumblr_padf1gQK4t1x7nxy0o1_1280.gifv');
+    background-size: cover;
+}
+
+main {
+    text-align: center;
+}
+
+.title {
+    font-family: 'Concert One', cursive;
+    font-family: 'Dancing Script', cursive;
+    color: wheat;
+    user-select: none;
+}
+
+footer {
+    color: white;
+}

@@ -25,18 +25,16 @@ class User {
     // save the users
     // return the saved user
     const data = this.fetchData();
-    const indexOfUser = data.indexOf(user => user.id === id);
-    if (indexOfUser === -1) {
-      return user;
-    }
-    data.push({
+    const createdUser = {
       id: user.id,
-       email: user.emails[0].value,
-       imageUrl: user.photos[0].value,
-       name: user.displayName,
-    });
+      timestamp: Date.now(),
+      email: user.emails[0].value,
+      imageUrl: user.photos[0].value,
+      name: user.displayName,
+    }
+    data.push(createdUser);
     this.saveData(data);
-    return user;
+    return createdUser;
   }
 };
 
