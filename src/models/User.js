@@ -1,4 +1,4 @@
-const {getJSON, saveJSON} = require('../utils/fileHelpers');
+const { getJSON, saveJSON } = require('../utils/fileHelpers');
 
 class User {
   constructor() {
@@ -36,6 +36,16 @@ class User {
     this.saveData(data);
     return createdUser;
   }
-};
+
+  async setPicture(userId, multerPicture) {
+    const data = this.fetchData();
+    const index = data.findIndex(user => user.id === userId);
+    if (index === -1) {
+      throw new Error(`User with id ${userId} not found`);
+    }
+    data[index].imageUrl = `/public/uploads/${multerPicture}`;
+    this.saveData(data);
+  };
+}
 
 module.exports = new User();

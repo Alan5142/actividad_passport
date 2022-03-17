@@ -40,7 +40,7 @@
       <div class="d-flex flex-row">
         <!-- Picture -->
         <div class="picture-container">
-          <img id="user.picture" class="" src="" alt="Loading picture...">
+          <img width="128" height="128" id="user.picture" class="" src="" alt="Loading picture...">
         </div>
 
         <div class="ms-2 me-2 vr"></div>
@@ -51,6 +51,12 @@
           <p id="user.createdAt">Loading join date...</p>
         </div>
       </div>
+
+      <h1>Sube tu imagen de perfil nueva</h1>
+      <form action="/profile/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="picture" id="image" accept="image/*" >
+        <input type="submit" value="Subir">
+      </form>
   </main>
 
   <!-- Profile page here-->
